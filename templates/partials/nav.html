@@ -1,0 +1,36 @@
+<header>
+    <nav class="site-nav">
+        <ul class="list-horizontal">
+            <li class="list-item">
+                <a href="{% url 'index' %}">
+                    Home
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="{% url 'list pets' %}">
+                    All Pets
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="{% url 'create pet' %}">
+                    Add Pet
+                </a>
+            </li>
+            {% if user.is_authenticated %}
+                <li class="list-item">
+                    <a href="{% url 'user profile' user.id %}">{{ user.username }}</a>
+                </li>
+                <li class="list-item">
+                    <a href="{% url 'signout user' %}">Sign out</a>
+                </li>
+            {% else %}
+                <li class="list-item">
+                    <a href="{% url 'login' %}">Sing in</a>
+                </li>
+                <li class="list-item">
+                    <a href="{% url 'signup user' %}">Sign Up</a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+</header> 

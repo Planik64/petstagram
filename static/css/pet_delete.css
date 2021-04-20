@@ -1,0 +1,20 @@
+div.delete-box {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+}
+
+div.box {
+    display: flex;
+    flex-direction: row;
+    margin: 30px 50px;
+    width: 60%;
+    justify-content: center;
+}
+
+div.box div.row {
+    width: 100%;
+    align-items: center;
+}

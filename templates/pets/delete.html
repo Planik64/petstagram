@@ -1,0 +1,25 @@
+{% extends 'shared/site.html' %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/pet_delete.css' %}">
+{% endblock %}
+{% block site_content %}
+    <div class="delete-box">
+        <h1>Are you sure you want to delete {{ pet.name }}?</h1>
+        <div class="box">
+            <div class="row">
+                <div class="col">
+                    <form method="post" action="{% url 'delete pet' pet.pk %}">
+                        {% csrf_token %}
+                        <button class="button button-red">
+                            Confirm
+                        </button>
+                    </form>
+                </div>
+                <div class="col">
+                    <a class="button button-blue" href="javascript:history.back()">No, go back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %} 

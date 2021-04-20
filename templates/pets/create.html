@@ -1,0 +1,15 @@
+{% extends 'shared/site.html' %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/pet_create.css' %}">
+{% endblock %}
+{% block site_content %}
+    <h1>Add pet</h1>
+    <div class="box">
+        <form method="post" class="create" enctype="multipart/form-data">
+            {{ form }}
+            {% csrf_token %}
+            <button type="submit" class="button button-blue">Create</button>
+        </form>
+    </div>
+{% endblock %}

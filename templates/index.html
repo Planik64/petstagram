@@ -1,0 +1,29 @@
+{% extends 'shared/site.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block site_title %}
+    Petstagram
+{% endblock %}
+
+{% block site_content %}
+<section class="banner">
+    <header>
+        <h1>Welcome to Petstagram</h1>
+        <p>Share your pets photos.</p>
+    </header>
+    <article class="row">
+        <article class="col">
+            <p>Already have an account?</p>
+            <a href="{% url 'login' %}" class="button">Sign in</a>
+        </article>
+        <article class="col">
+            <p>Do not have an account?</p>
+            <a href="{% url 'signup user' %}" class="button">Sign up</a>
+        </article>
+    </article>
+</section>
+{% endblock %}
