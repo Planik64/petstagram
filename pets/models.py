@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
-
+from cloudinary import models as cloudinary_models
 
 class Pet(models.Model):
     DOG = 'dog'
@@ -19,8 +19,9 @@ class Pet(models.Model):
     name = models.CharField(max_length=10, blank=False)
     age = models.IntegerField(blank=False)
     description = models.TextField(blank=False)
-    image = models.ImageField( upload_to='public/pets',
-        )
+    #image = models.ImageField( upload_to='public/pets',
+    #    )
+    image = cloudinary_models.CloudinaryField('image')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
