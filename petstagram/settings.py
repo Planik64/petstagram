@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'common',
     'pets',
     'accounts',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
